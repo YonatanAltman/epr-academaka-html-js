@@ -21,9 +21,28 @@ let cat = {
 arr.push(person1);
 arr.push(person2);
 arr.push(cat);
+person1.print = print;
 
+person1.print();
+
+function print() {
+    let number = 0;
+    for (let index = 0; index < 100; index++) {
+        const element = 100;
+        number += element * 2;
+
+    }
+    console.group('FROM');
+    console.log(getFullName(this));
+
+    console.log(number);
+    console.groupEnd();
+
+}
 document.getElementById('registerForm')
     .addEventListener("submit", submitRegisterForm);
+
+
 
 function submitRegisterForm(e) {
 
@@ -80,7 +99,8 @@ function register(person) {
 
 
     for (const p of arr) {
-        console.log(getFullName(p));
+        p.print = print;
+        p.print();
     };
     let b = confirm('Do You want to add another one?');
     if (b) {
