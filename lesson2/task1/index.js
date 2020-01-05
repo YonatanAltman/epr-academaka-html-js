@@ -1,6 +1,12 @@
 console.log('Hey Jude');
 console.log(new Date());
-var arr = [];
+var
+    arr = [],
+    a = 51,
+    b = 214;
+
+console.log(a * b);
+console.log(a / b);
 
 let person1 = {
     firstName: "Uri",
@@ -76,8 +82,10 @@ function submitRegisterForm(e) {
 
     let validForm = match && isNotT;
     // IF EVRITHING IS VALID
+    let color = '';
     if (validForm) {
         register({ firstName, lastName, age });
+        color = 'lightgreen';
     } else {
         let error = '';
         if (!match) {
@@ -87,11 +95,13 @@ function submitRegisterForm(e) {
             error += "'T' is not valid in last name;"
 
         }
+        color = 'red';
 
         alert(error)
     }
 
-
+    document.getElementsByTagName('body')[0]
+        .style.backgroundColor = color;
 }
 function register(person) {
 
