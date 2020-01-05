@@ -23,50 +23,87 @@ arr.push(person2);
 arr.push(cat);
 
 document.getElementById('registerForm')
-    .addEventListener("submit", function (e) {
+    .addEventListener("submit", submitRegisterForm);
+
+function submitRegisterForm(e) {
 
 
-        e.preventDefault();
-        let firstName = document.getElementById('firstName').value;
-        let lastName = document.getElementById('lastName').value;
-        let age = Number(document.getElementById('age').value);
-        let password = document.getElementById('password').value;
-        let password2 = document.getElementById('password2').value;
+    e.preventDefault();
+    let firstName = document.getElementById('firstName').value;
+    let lastName = document.getElementById('lastName').value;
+    let age = Number(document.getElementById('age').value);
+    let password = document.getElementById('password').value;
+    let password2 = document.getElementById('password2').value;
 
-        // let person = {
-        //     firstName: firstName,
-        //     lastName: lastName,
-        //     age: age
-        // };
-        let a = 1;
-        let b = '1';
+    // let person = {
+    //     firstName: firstName,
+    //     lastName: lastName,
+    //     age: age
+    // };
 
-        if (a === b) {
+    // /**VALID**\
+
+    // STEP 1 - FIRST NAME REQUIRED 
+    // ATTRIBUTE
+
+    // STEP 2 - LAST NAME WITHOUT 'T' 
+    let isNotT = isNotTInLastName(lastName);
+
+    // STEP 3 - AGE 18+ 
+    // ATTRIBUTE
+
+    // STEP 4 - PASSWORDS MATCH 
+    let match = isPasswordsMatchs(password, password2)
+
+    let validForm = match && isNotT;
+    // IF EVRITHING IS VALID
+    if (validForm) {
+        register({ firstName, lastName, age });
+    } else {
+        let error = '';
+        if (!match) {
+            error += 'The Passwords do not match! '
+        }
+        if (!isNotT) {
+            error += "'T' is not valid in last name;"
 
         }
-        else {
 
-        }
-        // IF EVRITHING IS VALID
-        let person = { firstName, lastName, age };
-        arr.push(person);
+        alert(error)
+    }
 
 
-        for (const p of arr) {
-            console.log(getFullName(p));
+}
+function register(person) {
+
+    arr.push(person);
 
 
-
-        }
-
-    });
-
+    for (const p of arr) {
+        console.log(getFullName(p));
+    };
+    let b = confirm('Do You want to add another one?');
+    if (b) {
+        // form reset
+    }
+}
 function getFullName(person) {
     return person.firstName + ' ' + person.lastName;
 }
 
-function isPasswordsEqual(pass1,pass2) { 
+function isPasswordsEqual(pass1, pass2) {
 
 }
+
+function isNotTInLastName(str) {
+    let b1 = isHasLetter('t', str.toLocaleLowerCase());
+    // let b2 = isHasLetter('b', str);
+    return !b1;
+}
+function isPasswordsMatchs(p1, p2) {
+
+    return p1 === p2;
+}
+
 
 
