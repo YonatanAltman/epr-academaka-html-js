@@ -1,0 +1,21 @@
+#glasses {
+  position: absolute;
+  top: 400px;
+  left: auto;
+  border-top: solid 5px black;
+  height: 10px;
+  width: 180px;
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+
+  cursor: grab;
+}
+
+.left-side,
+.right-side {
+  width: 100%;
+  background-color: rgba(255, 0, 0, 0.452);
+  height: 30px;
+  border-bottom-left-radius: 40%;
+  border-bottom-right-radius: 40%;
+}
