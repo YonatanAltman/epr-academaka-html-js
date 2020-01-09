@@ -34,7 +34,7 @@ body {
 
 .right {
   grid-column-start: 6;
-  animation: wink 12s infinite;
+  animation: wink 6s infinite;
 }
 .bottom {
   overflow: hidden;

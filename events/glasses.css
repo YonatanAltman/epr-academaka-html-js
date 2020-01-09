@@ -1,7 +1,7 @@
 #glasses {
   position: absolute;
-  top: 400px;
-  left: auto;
+  top: 100px;
+  left: 100px;
   border-top: solid 5px black;
   height: 10px;
   width: 180px;

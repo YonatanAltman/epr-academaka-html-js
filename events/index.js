@@ -14,13 +14,15 @@ for (const element of arr) {
 
 
 document.getElementsByClassName('eye')[0].addEventListener("click", print);
+document.getElementsByClassName('eye')[1].addEventListener("click", print);
 
 
-document.getElementsByClassName('top')[0].addEventListener("click", print);
+ document.getElementsByClassName('top')[0].addEventListener("click", print);
 
 
 
 function print(e) {
+    e.stopPropagation();
     console.log('CLICK');
     console.log(e.target);
 
