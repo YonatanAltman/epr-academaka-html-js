@@ -2,12 +2,12 @@ body,
 .wrapper {
   margin: 0;
   padding: 0;
-  background-color: black;
+  background-color: white;
 
   height: 90vh;
 }
 .wrapper {
-  background-color: black;
+  background-color: white;
 }
 h1 {
   color: rgb(42, 119, 42);
@@ -15,17 +15,13 @@ h1 {
   font-weight: bolder;
 }
 input {
-  border: none;
-  background-color: black;
+  
+  background-color: white;
 }
-input:hover {
-    background-color: gray;
-    transition: background-color 0.9s ease-in-out;
-    margin: 15px;
-}
+
 button {
-    border: none;
-    background-color: black;
+    
+    background-color: white;
 }
 .result {
   margin: auto;
